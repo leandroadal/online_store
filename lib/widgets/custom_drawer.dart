@@ -144,7 +144,7 @@ class CustomDrawer extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(right: 35, left: 30, bottom: 20),
+              padding: const EdgeInsets.only(right: 35, left: 30, bottom: 60),
               child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(

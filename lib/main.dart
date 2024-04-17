@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 import 'package:online_store/models/cart_model.dart';
 import 'package:online_store/models/user_model.dart';
 import 'package:online_store/pages/home_page.dart';
@@ -21,6 +22,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.transparent,
+      ),
+    );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
     return ScopedModel<UserModel>(
       model: UserModel(),
       child: ScopedModelDescendant<UserModel>(

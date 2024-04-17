@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "326415440802",
+    "project_id": "onlinestore-f09ce",
+    "storage_bucket": "onlinestore-f09ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326415440802:android:4466b49dfdb0d689cbb0fb",
+        "android_client_info": {
+          "package_name": "com.leandroadal.online_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk4AvPj_qw3XxHvWGdVvc0ZMIzZKf5iAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

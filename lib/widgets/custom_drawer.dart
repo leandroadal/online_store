@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:online_store/pages/login_page.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/user_model.dart';
 import '../tiles/drawer_tile.dart';
@@ -47,7 +50,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                     Positioned(
                       left: 0,
-                      bottom: 0,
+                      bottom: -4,
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model) {
                           return Column(
@@ -118,8 +121,56 @@ class CustomDrawer extends StatelessWidget {
                 controller: pageController,
                 page: 3,
               ),
+              //const Divider(),
+              /*
+              DrawerTile(
+                icon: Icons.info_outline,
+                text: 'Sobre',
+                controller: pageController,
+                page: 4, // Adicione uma nova página para a seção 'Sobre'
+              ),
+              */
+              /*
+              DrawerTile(
+                icon: Icons.settings,
+                text: 'Configurações',
+                controller: pageController,
+                page: 5,
+              ),
+              */
+              //const Divider(),
             ],
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 35, left: 30, bottom: 20),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text:
+                      'Versão 0.10 (1337)\n© 2024 by Leandro Silva. Ícones por ',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 14,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Icons8',
+                      style: const TextStyle(
+                        color: Colors.blue,
+                        decoration: TextDecoration.underline,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          launchUrl(Uri.parse('https://www.icons8.com'));
+                        },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

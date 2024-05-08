@@ -20,8 +20,17 @@ class CategoryTile extends StatelessWidget {
         height: 50,
         child: Image.network(
           snapshot.get('icon'),
-          fit: BoxFit
-              .scaleDown, // Ajusta a imagem para cobrir toda a área do ClipOval
+          fit: BoxFit.scaleDown, // Ajusta a imagem para cobrir toda a área
+          errorBuilder: (context, error, stackTrace) => const Icon(
+            Icons.error,
+            color: Colors.red,
+          ),
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          },
         ),
       ),
       title: Text(snapshot.get('title')),
@@ -39,10 +48,7 @@ class CategoryTile extends StatelessWidget {
                 ),
                 body: ProductsTab(
                   // Transfere a coleção de tipos da categoria selecionada
-                  collectionPath: FirebaseFirestore.instance
-                      .collection('products')
-                      .doc(snapshot.id)
-                      .collection('tipos'),
+                  collectionPath: snapshot.reference.collection('tipos'),
                 ),
                 floatingActionButton: const CartButton(),
               ),

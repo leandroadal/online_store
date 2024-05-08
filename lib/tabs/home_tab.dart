@@ -72,6 +72,8 @@ class HomeTab extends StatelessWidget {
                         placeholder: kTransparentImage,
                         image: snapshot.data!.docs[index]['image'],
                         fit: BoxFit.cover,
+                        imageErrorBuilder: (context, error, stackTrace) =>
+                            Icon(Icons.error),
                       ),
                     ),
                   );

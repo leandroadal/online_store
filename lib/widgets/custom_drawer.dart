@@ -38,7 +38,7 @@ class CustomDrawer extends StatelessWidget {
                   // posicionar em um retângulo
                   children: [
                     const Positioned(
-                      top: 8.0,
+                      top: 9.0,
                       left: 0.0,
                       child: Text(
                         'Online\nStore',
@@ -50,7 +50,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                     Positioned(
                       left: 0,
-                      bottom: -4,
+                      bottom: -6,
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model) {
                           return Column(

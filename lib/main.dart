@@ -23,11 +23,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.transparent,
-      ),
+      SystemUiOverlayStyle(
+          systemNavigationBarColor: Colors.black.withOpacity(0.5),
+          //systemNavigationBarIconBrightness: Brightness.light,
+          systemNavigationBarContrastEnforced: true),
     );
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.edgeToEdge,
+    );
 
     return ScopedModel<UserModel>(
       model: UserModel(),
